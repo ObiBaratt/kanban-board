@@ -4,9 +4,9 @@ import Column from "../Column/Column";
 
 export default function Board() {
     const backlog = [{'name': 'Drag Cards to Move', 'id': 1}, {'name': 'Mobile Styling', 'id': 2}];
-    const priority = [{'name': 'Connect to Firestore', 'id': 3}];
-    const in_progress = [{'name': 'Make Board', 'id': 4}];
-    const complete = [{'name': 'Setup Project', 'id': 5}];
+    const priority = [];
+    const in_progress = [{'name': 'Connect to Firestore', 'id': 3}];
+    const complete = [{'name': 'Setup Project', 'id': 5}, {'name': 'Make Board', 'id': 4}];
 
     // console.log(backlog, priority, in_progress, complete)
 
