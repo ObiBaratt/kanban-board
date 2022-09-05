@@ -11,8 +11,10 @@ export default function Column({ colName, colColor, colItems }) {
             {colItems.map(item => {
                 return (
                         <div key={item.id}>
-                            <Card cardTitle={item.name} cardText={item.text} cardChange={item.change} colColor={colColor} />
-                            <hr />
+                            <Card cardTitle={item.name}
+                                  cardText={item.text}
+                                  cardChange={item.change}
+                                  colColor={colColor} />
                         </div>
                 );
             })}
