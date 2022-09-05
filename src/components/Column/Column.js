@@ -11,7 +11,7 @@ export default function Column({ colName, colColor, colItems }) {
             {colItems.map(item => {
                 return (
                         <div key={item.id}>
-                            <Card cardTitle={item.name} colColor={colColor} />
+                            <Card cardTitle={item.name} cardText={item.text} cardChange={item.change} colColor={colColor} />
                             <hr />
                         </div>
                 );
