@@ -6,7 +6,7 @@ export default function AddCard({ colName }) {
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
 
-    const currentUser = 'TEST USER';
+    const currentUser = 'SECONDARY USER';
 
     const handleSubmit = (e) => {
         e.preventDefault();
