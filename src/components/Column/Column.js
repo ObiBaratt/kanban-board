@@ -1,6 +1,7 @@
 import "./Column.css";
 
 import Card from "../Card/Card";
+import AddCard from "../AddCard/AddCard";
 
 export default function Column({ colName, colColor, colItems }) {
     // <Card cardTitle="Make Board" colColor={colColor} />
@@ -8,6 +9,7 @@ export default function Column({ colName, colColor, colItems }) {
     return (
         <div className={`${colName} boardColumn`}>
             <h1>{colName}</h1>
+            <AddCard colName={colName} />
             {colItems.map(item => {
                 return (
                         <div key={item.id}>
