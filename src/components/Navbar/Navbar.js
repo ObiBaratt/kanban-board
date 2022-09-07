@@ -1,7 +1,7 @@
 import fetchCards from "../../utils/fetchCards"
 
 export default function Navbar() {
-    const currentUser = "SECONDARY USER";
+    const currentUser = "TERTIARY USER";
     const clickHandler = () => {
         console.log('handling click')
         fetchCards(currentUser)

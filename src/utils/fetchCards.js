@@ -11,7 +11,10 @@ export default async function fetchCards(currentUser) {
 
     const querySnapshot = await getDocs(q);
 
+    const cards = [];
+
     querySnapshot.forEach((doc) => {
-        console.log(doc.id, " => ", doc.data());
+        cards.push(doc.data());
     });
+    return cards;
 }

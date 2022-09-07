@@ -6,17 +6,19 @@ export default function AddCard({ colName }) {
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
 
-    const currentUser = 'SECONDARY USER';
+    const currentUser = 'TERTIARY USER';
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         console.log('Submitted: ', 'title: ', title, 'text: ', text);
 
+        const curTime = new Date();
+
         const newCard = {
             "title": title,
             "text": text,
-            "time": new Date(),
+            "time": `${curTime.toLocaleDateString()} @ ${curTime.toLocaleTimeString()}`,
             "user": currentUser,
             "type": colName,
         }

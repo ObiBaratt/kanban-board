@@ -3,7 +3,7 @@ import "./Column.css";
 import Card from "../Card/Card";
 import AddCard from "../AddCard/AddCard";
 
-export default function Column({ colName, colColor, colItems }) {
+export default function Column({ colName, colColor, colItems, addCard }) {
     // <Card cardTitle="Make Board" colColor={colColor} />
 
     return (
