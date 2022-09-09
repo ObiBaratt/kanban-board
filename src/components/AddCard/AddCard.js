@@ -5,7 +5,7 @@ import { currentUser } from "../../utils/testSettings";
 
 import ChangeCard from "../ChangeCard/ChangeCard";
 
-export default function AddCard({ colName, colColor }) {
+export default function AddCard({ colName, colColor, setCards, forceUpdate }) {
     const [displayForm, setDisplayForm] = useState(false);
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
@@ -31,6 +31,8 @@ export default function AddCard({ colName, colColor }) {
         setDisplayForm(false);
 
         addCard(newCard);
+
+        forceUpdate();
     }
 
     if (displayForm) {

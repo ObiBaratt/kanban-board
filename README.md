@@ -10,3 +10,6 @@
 6. Allow editing of cards
 7. Mobile styling with tabs to swap between columns
 8. Deploy app
+9. Move Cards around via events
+10. Move Cards around by dragging
+11. ~~Re-render when a new card is added.~~
