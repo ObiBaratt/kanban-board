@@ -1,7 +1,8 @@
 import fetchCards from "../../utils/fetchCards"
 
+import { currentUser } from "../../utils/testSettings"
+
 export default function Navbar() {
-    const currentUser = "TERTIARY USER";
     const clickHandler = () => {
         console.log('handling click')
         fetchCards(currentUser)

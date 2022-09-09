@@ -3,6 +3,8 @@ import { useState } from "react";
 
 import "./AddCard.css";
 
+import { currentUser } from "../../utils/testSettings";
+
 import ChangeCard from "../ChangeCard/ChangeCard";
 
 export default function AddCard({ colName, colColor }) {
@@ -10,7 +12,6 @@ export default function AddCard({ colName, colColor }) {
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
 
-    const currentUser = 'TEST USER';
 
     const handleSubmit = (e) => {
         e.preventDefault();

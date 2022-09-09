@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 import fetchCards from "../../utils/fetchCards";
 import sortCards from "../../utils/sortCards";
 
+import { currentUser } from "../../utils/testSettings";
+
 export default function Board() {
     const [cards, setCards] = useState('');
-
-    const currentUser = "TEST USER";
 
     useEffect(()=> {
         fetchCards(currentUser).then(success => {
@@ -43,16 +43,16 @@ export default function Board() {
         <div className="container mainBoard">
             <div className="row">
                 <div className="col-sm">
-                    <Column colName='Backlog' colColor='' colItems={backlog} />
+                    <Column cards={cards} colName='Backlog' colColor='' colItems={backlog} />
                 </div>
                 <div className="col-sm">
-                    <Column colName='Priority' colColor='warning' colItems={priority} />
+                    <Column cards={cards} colName='Priority' colColor='warning' colItems={priority} />
                 </div>
                 <div className="col-sm">
-                    <Column colName='In Progress' colColor='info' colItems={in_progress} />
+                    <Column cards={cards} colName='In Progress' colColor='info' colItems={in_progress} />
                 </div>
                 <div className="col-sm">
-                    <Column colName='Complete' colColor='' colItems={complete} />
+                    <Column cards={cards} colName='Complete' colColor='' colItems={complete} />
                 </div>
             </div>
         </div>

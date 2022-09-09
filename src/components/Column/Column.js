@@ -1,10 +1,15 @@
+import { useState } from "react";
+
+import sortCards from "../../utils/sortCards";
+
 import "./Column.css";
 
 import Card from "../Card/Card";
 import AddCard from "../AddCard/AddCard";
 
-export default function Column({ colName, colColor, colItems}) {
-    // <Card cardTitle="Make Board" colColor={colColor} />
+export default function Column({ colName, colColor, cards }) {
+
+    const colItems = sortCards(colName, cards);
 
     if (colItems !== undefined) {
         return (
@@ -13,10 +18,10 @@ export default function Column({ colName, colColor, colItems}) {
                 <AddCard colName={colName} colColor={colColor} />
                 {colItems.map(item => {
                     return (
-                            <div key={item.id}>
-                                <Card cardTitle={item.name}
+                            <div key={`${item.title}-${item.text}`}>
+                                <Card cardTitle={item.title}
                                     cardText={item.text}
-                                    cardChange={item.change}
+                                    cardChange={item.time}
                                     colColor={colColor} />
                             </div>
                     );
