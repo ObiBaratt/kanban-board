@@ -1,5 +1,10 @@
 export default function sortCards(cardStatus, objArr) {
-    return objArr.filter(obj => {
-        return obj.type === cardStatus;
-    });
+    if (Array.isArray(objArr)) {
+        return objArr.filter(obj => {
+            return obj.type === cardStatus;
+        });
+    }
+    else {
+        return undefined;
+    }
 }
