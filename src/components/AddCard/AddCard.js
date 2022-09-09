@@ -1,8 +1,6 @@
 import { addCard } from "../../utils/addCard";
 import { useState } from "react";
 
-import "./AddCard.css";
-
 import { currentUser } from "../../utils/testSettings";
 
 import ChangeCard from "../ChangeCard/ChangeCard";
@@ -40,10 +38,7 @@ export default function AddCard({ colName, colColor }) {
             <div className="addCard">
                 <div className="card-body">
                 <img src="/calendarMinus.svg" width="30" height="30" alt="New Card" onClick={() => setDisplayForm(!displayForm)} />
-                <ChangeCard cardTitle={title}
-                      cardText={text}
-                      colColor={colColor} />
-                    <form onSubmit={handleSubmit}>
+                    <form className="card" onSubmit={handleSubmit}>
                         <div>
                             <input type="text" value={title} placeholder="New Card Title" onChange={(e) => {setTitle(e.target.value)}} ></input>
                             <br />
@@ -53,6 +48,9 @@ export default function AddCard({ colName, colColor }) {
                             <br />
                         </div>
                     </form>
+                <ChangeCard cardTitle={title}
+                      cardText={text}
+                      colColor={colColor} />
                 </div>
             </div>
     )} else {
