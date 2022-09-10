@@ -16,11 +16,9 @@ export default function Column({ colName, colColor, cards, forceUpdate }) {
                 <AddCard forceUpdate={forceUpdate} colName={colName} colColor={colColor} />
                 {colItems.map(item => {
                     return (
-                            <div key={`${item.title}-${item.text}`}>
-                                <Card cardTitle={item.title}
-                                    cardText={item.text}
-                                    cardChange={item.time}
-                                    colColor={colColor} />
+                            <div key={`${item.id}`}>
+                                <Card card={item}
+                                      colColor={colColor} />
                             </div>
                     );
                 })}

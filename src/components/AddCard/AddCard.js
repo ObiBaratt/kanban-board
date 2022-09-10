@@ -19,6 +19,7 @@ export default function AddCard({ colName, colColor, setCards, forceUpdate }) {
         const curTime = new Date();
 
         const newCard = {
+            "id": `${curTime.valueOf()}${currentUser}`,
             "title": title,
             "text": text,
             "time": `${curTime.toLocaleDateString()} @ ${curTime.toLocaleTimeString()}`,
