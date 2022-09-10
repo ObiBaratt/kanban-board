@@ -5,12 +5,13 @@ import changeCard, { DEL, MOVE, EDIT } from "../../utils/changeCard";
 
 import "./Card.css";
 
-export default function Card({ card, colColor }) {
+export default function Card({ card, colColor, forceUpdate }) {
     const [showDel, setShowDel] = useState(false);
 
     const handleDelete = () => {
         changeCard(DEL, card.id);
         console.log('Deleting: ', card);
+        forceUpdate();
     }
 
     const showTrash = (cardId) => {

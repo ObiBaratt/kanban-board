@@ -8,12 +8,15 @@ import sortCards from "../../utils/sortCards";
 import { currentUser } from "../../utils/testSettings";
 
 export default function Board() {
+
     function useForceUpdate(){
         return () => setValue(value => value + 1); // update state to force render
     }
+
     const [value, setValue] = useState(0); // integer state
     const [cards, setCards] = useState('');
     const forceUpdate = useForceUpdate();
+
     useEffect(()=> {
         try {
             fetchCards(currentUser).then(success => {

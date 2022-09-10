@@ -18,7 +18,8 @@ export default function Column({ colName, colColor, cards, forceUpdate }) {
                     return (
                             <div key={`${item.id}`}>
                                 <Card card={item}
-                                      colColor={colColor} />
+                                      colColor={colColor}
+                                      forceUpdate={forceUpdate} />
                             </div>
                     );
                 })}
