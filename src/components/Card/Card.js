@@ -1,21 +1,19 @@
 import { useState } from "react";
 import ChangeCard from "../ChangeCard/ChangeCard";
 
+import changeCard, { DEL, MOVE, EDIT } from "../../utils/changeCard";
+
 import "./Card.css";
 
 export default function Card({ card, colColor }) {
     const [showDel, setShowDel] = useState(false);
 
-    const DEL = "delete";
-    const MOVE = "move";
-    const EDIT = "edit";
-
     const handleDelete = () => {
-        // ChangeCard(cardId, DEL, [])
-        console.log(card);
+        changeCard(DEL, card.id);
+        console.log('Deleting: ', card);
     }
 
-    const showTrash = () => {
+    const showTrash = (cardId) => {
         if (showDel) {
             return (<img src="/trash3.svg" className="deleteCard" onClick={handleDelete} alt="Delete card" />)
         }
