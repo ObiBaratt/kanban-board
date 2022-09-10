@@ -10,7 +10,6 @@ function App() {
         <Login />
           <Navbar />
           <div className="centered">
-            <h1 className="bg-light">Users's Board</h1>
             <Board />
           </div>
         </>

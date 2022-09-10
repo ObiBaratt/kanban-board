@@ -7,8 +7,6 @@ import sortCards from "../../utils/sortCards";
 
 import { currentUser } from "../../utils/testSettings";
 
-
-
 export default function Board() {
     function useForceUpdate(){
         return () => setValue(value => value + 1); // update state to force render
@@ -23,14 +21,12 @@ export default function Board() {
 
             })
         } catch(e) {console.log(e)};
-        console.log(value);
     }, [value])
 
     const priority = sortCards('Priority', cards);
     const backlog = sortCards('Backlog', cards);
     const in_progress = sortCards('In Progress', cards);
     const complete = sortCards('Complete', cards);
-
 
     return (
         <div className="container mainBoard">
