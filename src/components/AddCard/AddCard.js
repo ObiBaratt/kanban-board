@@ -33,7 +33,7 @@ export default function AddCard({ colName, colColor, setCards, forceUpdate }) {
 
         addCard(newCard).then(
             forceUpdate()
-        )
+        );
     }
 
     if (displayForm) {
