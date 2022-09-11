@@ -23,10 +23,10 @@ export default async function changeCard(action, cardId, changes = undefined) {
     }
 
     else if (action === MOVE) {
-        console.log(`Moving card with id: ${cardId}`)
+        console.log(`Moving card with id: ${cardId} to ${changes.location}`)
     }
 
     else if (action === EDIT) {
-
+        console.log(`Editing card with id: ${cardId}`)
     }
 }

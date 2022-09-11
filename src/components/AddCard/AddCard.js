@@ -31,9 +31,9 @@ export default function AddCard({ colName, colColor, setCards, forceUpdate }) {
         setText('');
         setDisplayForm(false);
 
-        addCard(newCard);
-
-        forceUpdate();
+        addCard(newCard).then(
+            forceUpdate()
+        )
     }
 
     if (displayForm) {

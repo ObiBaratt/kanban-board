@@ -27,7 +27,7 @@ export default function Column({ colName, colColor, cards, forceUpdate }) {
         )}
         else {
             return (
-                <></>
+                <h3>Try adding a card!</h3>
             )
         }
 }

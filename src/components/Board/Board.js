@@ -16,6 +16,7 @@ export default function Board() {
     const [value, setValue] = useState(0); // integer state
     const [cards, setCards] = useState('');
     const forceUpdate = useForceUpdate();
+    console.log(value);
 
     useEffect(()=> {
         try {
