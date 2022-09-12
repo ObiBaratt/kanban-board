@@ -10,9 +10,3 @@ export async function addCard(cardInfo){
     console.error("Error adding document: ", e);
     }
 }
-
-export const testCardInfo = {
-    "title": "Test Adding a Card",
-    "text": "Call the fxn locally and see what happens",
-    "time": new Date(),
-}

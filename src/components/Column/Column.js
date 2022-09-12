@@ -1,6 +1,7 @@
 import { useDrop } from "react-dnd";
 
 import sortCards from "../../utils/sortCards";
+import moveCard from "../../utils/moveCard";
 
 import "./Column.css";
 
@@ -13,9 +14,10 @@ export default function Column({ colName, colColor, cards, forceUpdate }) {
         accept: "Card",
         drop: (item) => {
             console.log(`Dropped ${item.id} to ${colName}`);
-            console.log(item);
-            item.type = colName;
-            console.log(item);
+            moveCard(item, colName).then(
+                forceUpdate()
+            );
+            console.log('Moved card');
         },
         collect: (monitor) => ({
             isOver: monitor.isOver()
