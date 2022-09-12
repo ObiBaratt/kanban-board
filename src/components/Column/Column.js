@@ -13,6 +13,7 @@ export default function Column({ colName, colColor, cards, forceUpdate }) {
     const [{ isOver }, dropRef] = useDrop({
         accept: "Card",
         drop: async (item) => {
+            // eslint-disable-next-line
             const moved = await moveCard(item, colName);
             forceUpdate();
         },
