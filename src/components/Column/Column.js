@@ -12,12 +12,9 @@ export default function Column({ colName, colColor, cards, forceUpdate }) {
 
     const [{ isOver }, dropRef] = useDrop({
         accept: "Card",
-        drop: (item) => {
-            console.log(`Dropped ${item.id} to ${colName}`);
-            moveCard(item, colName).then(
-                forceUpdate()
-            );
-            console.log('Moved card');
+        drop: async (item) => {
+            const moved = await moveCard(item, colName);
+            forceUpdate();
         },
         collect: (monitor) => ({
             isOver: monitor.isOver()
@@ -45,10 +42,11 @@ export default function Column({ colName, colColor, cards, forceUpdate }) {
         )}
         else {
             return (
-                <div className={`${colName} boardColumn`}>
+                <div ref={dropRef} className={`${colName} boardColumn`}>
                 <h1>{colName}</h1>
                 <AddCard forceUpdate={forceUpdate} colName={colName} colColor={colColor} />
                 <h3>Add / Drop a Card</h3>
+                {isOver && <div>Drop Here!</div>}
             </div>
             )
         }

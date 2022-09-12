@@ -25,7 +25,6 @@ export default function Card({ card, colColor, forceUpdate }) {
         deleteCard(card.id).then(
             forceUpdate()
         );
-        console.log('Deleting: ', card);
     }
 
     const handleEdit = () => {

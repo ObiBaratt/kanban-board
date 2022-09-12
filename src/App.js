@@ -10,11 +10,12 @@ import "./App.css";
 function App() {
       return (
         <>
-          <DndProvider backend={HTML5Backend}>
         <Login />
           <Navbar />
+          <DndProvider backend={HTML5Backend}>
               <Board />
           </DndProvider>
+
         </>
       );
 }

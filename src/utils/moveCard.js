@@ -14,4 +14,5 @@ export default async function moveCard(card, newType) {
     querySnapshot.forEach((doc) => {
         updateDoc(doc.ref, {type: newType})
     });
+    return "Moved";
 }
