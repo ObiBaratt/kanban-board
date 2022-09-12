@@ -1,7 +1,4 @@
 import { useDrop } from "react-dnd";
-import { DropTypes } from "../../utils/DnDConstants";
-
-import { useRef } from "react";
 
 import sortCards from "../../utils/sortCards";
 
@@ -12,14 +9,18 @@ import AddCard from "../AddCard/AddCard";
 
 export default function Column({ colName, colColor, cards, forceUpdate }) {
 
-    const dropRef = useRef(null);
-    const [, drop] = useDrop({
+    const [{ isOver }, dropRef] = useDrop({
         accept: "Card",
         drop: (item) => {
-            console.log(`Dropped item to ${colName}`)
-        }
+            console.log(`Dropped ${item.id} to ${colName}`);
+            console.log(item);
+            item.type = colName;
+            console.log(item);
+        },
+        collect: (monitor) => ({
+            isOver: monitor.isOver()
+        })
     })
-    drop(dropRef);
 
     const colItems = sortCards(colName, cards);
 
@@ -28,6 +29,7 @@ export default function Column({ colName, colColor, cards, forceUpdate }) {
             <div ref={dropRef} className={`${colName} boardColumn`}>
                 <h1>{colName}</h1>
                 <AddCard forceUpdate={forceUpdate} colName={colName} colColor={colColor} />
+                {isOver && <div>Drop Here!</div>}
                 {colItems.map(item => {
                     return (
                             <div key={`${item.id}`}>
