@@ -8,8 +8,6 @@
 4. ~~Setup board to load specifc users cards instead of hardcoded cards~~
 5. ~~Replace hardcoded currentUser (AddCard.js, Navbar.js)~~
 6. Allow editing of cards
-7. Mobile styling with tabs to swap between columns
-8. Deploy app
-9. Move Cards around via events
-10. Move Cards around by dragging
-11. ~~Re-render when a new card is added.~~
+7. Deploy app
+8. ~~Move Cards around by dragging~~
+9. ~~Re-render when a new card is added.~~
