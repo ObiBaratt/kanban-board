@@ -9,7 +9,7 @@ export default function Column({ colName, colColor, cards, forceUpdate }) {
 
     const colItems = sortCards(colName, cards);
 
-    if (colItems !== undefined) {
+    if (colItems && colItems.length > 0) {
         return (
             <div className={`${colName} boardColumn`}>
                 <h1>{colName}</h1>
@@ -27,7 +27,11 @@ export default function Column({ colName, colColor, cards, forceUpdate }) {
         )}
         else {
             return (
-                <h3>Try adding a card!</h3>
+                <div className={`${colName} boardColumn`}>
+                <h1>{colName}</h1>
+                <AddCard forceUpdate={forceUpdate} colName={colName} colColor={colColor} />
+                <h3>Try Adding a Card.</h3>
+            </div>
             )
         }
 }
