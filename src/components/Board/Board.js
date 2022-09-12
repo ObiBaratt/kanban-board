@@ -1,7 +1,8 @@
 import "./Board.css";
 
-import Column from "../Column/Column";
 import { useEffect, useState } from "react";
+
+import Column from "../Column/Column";
 import fetchCards from "../../utils/fetchCards";
 import sortCards from "../../utils/sortCards";
 
