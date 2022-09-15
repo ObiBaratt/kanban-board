@@ -1,22 +1,17 @@
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
+import { Routes, Route } from "react-router-dom";
 
-import Board from "./components/Board/Board";
-import Navbar from "./components/Navbar/Navbar";
 import Login from "./components/Login/Login";
+import Home from "./components/Home/Home";
 
 import "./App.css";
 
 function App() {
-      return (
-        <>
-        <Login />
-          <Navbar />
-          <DndProvider backend={HTML5Backend}>
-              <Board />
-          </DndProvider>
 
-        </>
+  return (
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Login />} />
+        </Routes>
       );
 }
 

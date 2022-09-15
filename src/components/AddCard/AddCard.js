@@ -1,5 +1,6 @@
 import { addCard } from "../../utils/addCard";
 import { useState } from "react";
+import { auth } from "../../utils/firebaseConfig";
 
 import { currentUser } from "../../utils/testSettings";
 
@@ -12,6 +13,9 @@ export default function AddCard({ colName, colColor, setCards, forceUpdate }) {
 
 
     const handleSubmit = (e) => {
+        if (!auth.CurrentUser) {
+            return alert("Please Log In");
+        }
         e.preventDefault();
 
         console.log('Submitted: ', 'title: ', title, 'text: ', text);

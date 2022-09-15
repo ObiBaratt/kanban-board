@@ -1,12 +1,14 @@
 import "./Board.css";
 
+import { auth } from "../../utils/firebaseConfig";
+
 import { useEffect, useState } from "react";
 
 import Column from "../Column/Column";
 import fetchCards from "../../utils/fetchCards";
 import sortCards from "../../utils/sortCards";
 
-import { currentUser } from "../../utils/testSettings";
+// import { currentUser } from "../../utils/testSettings";
 
 export default function Board() {
 
@@ -17,11 +19,10 @@ export default function Board() {
     const [value, setValue] = useState(0); // integer state
     const [cards, setCards] = useState('');
     const forceUpdate = useForceUpdate();
-    console.log(value);
 
     useEffect(()=> {
         try {
-            fetchCards(currentUser).then(success => {
+            fetchCards(auth.currentUser).then(success => {
                 setCards(success);
 
             })

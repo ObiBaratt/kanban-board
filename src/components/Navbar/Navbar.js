@@ -1,19 +1,22 @@
-import fetchCards from "../../utils/fetchCards"
-
-import { currentUser } from "../../utils/testSettings"
+import { useNavigate } from "react-router-dom"
+import { auth } from "../../utils/firebaseConfig";
 
 export default function Navbar() {
+    const navigate = useNavigate();
 
-    const profileClickHandler = () => { // TODO: Change to login/account
-        console.log('handling click')
-        fetchCards(currentUser)
+    const profileClickHandler = () => {
+        if (!auth.currentUser){
+            navigate("/");
+        } else {
+            navigate("/home");
+        }
     }
 
     return (
         <nav className="navbar navbar-light bg-light">
             <div className='container'>
                 <span className="navbar-brand mb-0 h1"><img src="/kanban.svg" width="30" height="30" alt="Kanban Board" /></span>
-                <span className="navbar-brand"><h1><em>{currentUser}'s</em> Board</h1></span>
+                <span className="navbar-brand"><h1><em>Kanbaneer</em></h1></span>
                 <span className="navbar-brand" onClick={()=> profileClickHandler()}>
                     <img src="/personIcon.svg" width="30" height="30" alt="Login Btn" />
                 </span>
