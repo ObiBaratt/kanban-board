@@ -7,7 +7,7 @@ export default async function fetchCards(currentUser) {
 
     // Create a query against the collection.
     const q = query(usersRef, where("user", "==", currentUser));
-    console.log('sending fetch query')
+    // console.log('sending fetch query')
 
     const querySnapshot = await getDocs(q);
 

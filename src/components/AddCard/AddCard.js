@@ -1,17 +1,18 @@
 import { addCard } from "../../utils/addCard";
 import { useState } from "react";
 
-import { currentUser } from "../../utils/testSettings";
-
 import ChangeCard from "../ChangeCard/ChangeCard";
 
-export default function AddCard({ colName, colColor, setCards, forceUpdate }) {
+export default function AddCard({ colName, colColor, setCards, forceUpdate, user }) {
     const [displayForm, setDisplayForm] = useState(false);
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
 
 
     const handleSubmit = (e) => {
+        if (!user) {
+            return alert("Please Log In");
+        }
         e.preventDefault();
 
         console.log('Submitted: ', 'title: ', title, 'text: ', text);
@@ -19,11 +20,11 @@ export default function AddCard({ colName, colColor, setCards, forceUpdate }) {
         const curTime = new Date();
 
         const newCard = {
-            "id": `${curTime.valueOf()}${currentUser}`,
+            "id": `${curTime.valueOf()}${user}`,
             "title": title,
             "text": text,
             "time": `${curTime.toLocaleDateString()} @ ${curTime.toLocaleTimeString()}`,
-            "user": currentUser,
+            "user": user,
             "type": colName,
         }
 

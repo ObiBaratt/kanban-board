@@ -8,7 +8,7 @@ import "./Column.css";
 import Card from "../Card/Card";
 import AddCard from "../AddCard/AddCard";
 
-export default function Column({ colName, colColor, cards, forceUpdate }) {
+export default function Column({ colName, colColor, cards, forceUpdate, user }) {
 
     const [{ isOver }, dropRef] = useDrop({
         accept: "Card",
@@ -28,7 +28,7 @@ export default function Column({ colName, colColor, cards, forceUpdate }) {
         return (
             <div ref={dropRef} className={`${colName} boardColumn`}>
                 <h1>{colName}</h1>
-                <AddCard forceUpdate={forceUpdate} colName={colName} colColor={colColor} />
+                <AddCard user={user} forceUpdate={forceUpdate} colName={colName} colColor={colColor} />
                 {isOver && <div>Drop Here!</div>}
                 {colItems.map(item => {
                     return (
@@ -45,7 +45,7 @@ export default function Column({ colName, colColor, cards, forceUpdate }) {
             return (
                 <div ref={dropRef} className={`${colName} boardColumn`}>
                 <h1>{colName}</h1>
-                <AddCard forceUpdate={forceUpdate} colName={colName} colColor={colColor} />
+                <AddCard user={user} forceUpdate={forceUpdate} colName={colName} colColor={colColor} />
                 <h3>Add / Drop a Card</h3>
                 {isOver && <div>Drop Here!</div>}
             </div>

@@ -1,0 +1,32 @@
+.login {
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.login-box {
+    border: 2px solid black;
+    width: auto;
+    height: auto;
+    max-width: 25em;
+    max-height: 30em;
+    margin-top: 7em;
+}
+
+.spacer {
+    white-space: pre;
+}
+
+.header {
+    text-align: center;
+    padding-bottom: 3em;
+}
+
+.toggle-register {
+    text-align: center;
+    color: blue;
+}
+
+.toggle-register:hover {
+    text-decoration: underline;
+}
