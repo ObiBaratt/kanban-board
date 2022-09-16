@@ -7,7 +7,7 @@ export default async function moveCard(card, newType) {
     const usersRef = collection(db, "cards");
     const q = query(usersRef, where("id", "==", card.id));
 
-    console.log('sending move query')
+    // console.log('sending move query')
 
     const querySnapshot = await getDocs(q);
 

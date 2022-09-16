@@ -2,7 +2,7 @@ import { createUserWithEmailAndPassword,
         signInWithEmailAndPassword,
         GoogleAuthProvider,
         setPersistence,
-        browserSessionPersistence,
+        browserLocalPersistence,
         signInWithPopup,
         sendPasswordResetEmail,
         signOut } from "firebase/auth";
@@ -27,17 +27,18 @@ export const registerWithEmail = async (auth, email, password) => {
   };
 
 export function loginWithEmail(email, password) {
+  setPersistence(auth, browserLocalPersistence).then(
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
           // eslint-disable-next-line
           const user = userCredential.user;
           // ...
-        })
+        }))
         .catch((err) => {
             if (err.message.includes(("auth/"))) {
-                console.log("Invalid Username or Password.");
+                alert("Invalid Username or Password.");
             } else {
-                console.log('something else')
+                console.log('Something went wrong...')
             }
         });
 };
@@ -57,7 +58,7 @@ export const sendPasswordReset = async (email) => {
 export async function loginWithGoogle() {
     const provider = new GoogleAuthProvider();
     try {
-      await setPersistence(auth, browserSessionPersistence);
+      await setPersistence(auth, browserLocalPersistence);
       const userCred = await signInWithPopup(auth, provider);
 
       return {

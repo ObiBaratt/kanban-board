@@ -1,16 +1,22 @@
 import "./Board.css";
 
-import { auth } from "../../utils/firebaseConfig";
-
 import { useEffect, useState } from "react";
 
 import Column from "../Column/Column";
 import fetchCards from "../../utils/fetchCards";
 import sortCards from "../../utils/sortCards";
+import { useNavigate } from "react-router-dom";
 
-// import { currentUser } from "../../utils/testSettings";
+export default function Board({ user }) {
+    const navigate = useNavigate();
 
-export default function Board() {
+    useEffect(() => {
+        if (!user) {
+        navigate("/");
+    }
+    }, [user, navigate])
+
+
 
     function useForceUpdate(){
         return () => setValue(value => value + 1); // update state to force render
@@ -21,13 +27,14 @@ export default function Board() {
     const forceUpdate = useForceUpdate();
 
     useEffect(()=> {
-        try {
-            fetchCards(auth.currentUser).then(success => {
-                setCards(success);
+        if (user) {
+            try {
+                fetchCards(user).then(success => {
+                    setCards(success);
 
-            })
-        } catch(e) {console.log(e)};
-    }, [value])
+                })
+            } catch(e) {console.log(e)}};
+    }, [value, user])
 
     const priority = sortCards('Priority', cards);
     const backlog = sortCards('Backlog', cards);
@@ -38,16 +45,16 @@ export default function Board() {
         <div className="container mainBoard">
             <div className="row">
                 <div className="col-sm">
-                    <Column cards={cards} forceUpdate={forceUpdate} colName='Backlog' colColor='' colItems={backlog} />
+                    <Column user={user} cards={cards} forceUpdate={forceUpdate} colName='Backlog' colColor='' colItems={backlog} />
                 </div>
                 <div className="col-sm">
-                    <Column cards={cards} forceUpdate={forceUpdate} colName='Priority' colColor='warning' colItems={priority} />
+                    <Column user={user} cards={cards} forceUpdate={forceUpdate} colName='Priority' colColor='warning' colItems={priority} />
                 </div>
                 <div className="col-sm">
-                    <Column cards={cards} forceUpdate={forceUpdate} colName='In Progress' colColor='info' colItems={in_progress} />
+                    <Column user={user} cards={cards} forceUpdate={forceUpdate} colName='In Progress' colColor='info' colItems={in_progress} />
                 </div>
                 <div className="col-sm">
-                    <Column cards={cards} forceUpdate={forceUpdate} colName='Complete' colColor='' colItems={complete} />
+                    <Column user={user} cards={cards} forceUpdate={forceUpdate} colName='Complete' colColor='' colItems={complete} />
                 </div>
             </div>
         </div>
