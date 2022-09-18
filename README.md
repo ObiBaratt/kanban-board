@@ -1,5 +1,5 @@
 # React Kanban Board
-Live at: https://www.kanbaneer.com/ (Google SSL pending)
+Live at: https://www.kanbaneer.com/
 
 [Alternate Link](https://alert-basis-361623.web.app/)
 
