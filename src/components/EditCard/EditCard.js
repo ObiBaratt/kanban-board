@@ -4,8 +4,8 @@ import editCard from "../../utils/editCard";
 
 export default function EditCard({ card, forceUpdate, colColor }) {
     const [displayForm, setDisplayForm] = useState(false);
-    const [title, setTitle] = useState('');
-    const [text, setText] = useState('');
+    const [title, setTitle] = useState(card.title);
+    const [text, setText] = useState(card.text);
 
 
     const handleSubmit = async (e) => {
@@ -18,8 +18,8 @@ export default function EditCard({ card, forceUpdate, colColor }) {
             "text": text,
         }
 
-        setTitle('');
-        setText('');
+        // setTitle('');
+        // setText('');
         setDisplayForm(false);
 
         // eslint-disable-next-line
