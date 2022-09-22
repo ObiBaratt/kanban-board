@@ -34,6 +34,7 @@ export default function Card({ card, colColor, forceUpdate }) {
             return (<img src="/trash3.svg" className="deleteCard" onClick={handleDelete} alt="Delete card" />)
         }
     }
+
 if (displaying) {
     return (
         <div className={`card bg-${colColor}`}
@@ -45,11 +46,11 @@ if (displaying) {
 
             <div className="card-body" id={`${card.id}`}>
                 <span className="card-head">
-                    <h5 className={`card-head-item bg-${colColor}`}>{ card.title }</h5>
                     <span className="card-head-item">
                         <EditCard card={card} forceUpdate={forceUpdate} colColor={colColor}/>
                     </span>
-                </span>
+                    </span>
+                    <h5 className={`card-head-item bg-${colColor}`}>{ card.title }</h5>
                 <div className="card-contents">
                 <h6 className="card-subtitle mb-2 text-muted">{ card.time }</h6>
                 <p className="card-text">{ card.text }</p>

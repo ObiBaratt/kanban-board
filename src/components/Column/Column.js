@@ -28,7 +28,9 @@ export default function Column({ colName, colColor, cards, forceUpdate, user }) 
         return (
             <div ref={dropRef} className={`${colName} boardColumn`}>
                 <h1>{colName}</h1>
-                <AddCard user={user} forceUpdate={forceUpdate} colName={colName} colColor={colColor} />
+                <span className="addCard">
+                    <AddCard user={user} forceUpdate={forceUpdate} colName={colName} colColor={colColor} />
+                </span>
                 {isOver && <div>Drop Here!</div>}
                 {colItems.map(item => {
                     return (
@@ -46,8 +48,7 @@ export default function Column({ colName, colColor, cards, forceUpdate, user }) 
                 <div ref={dropRef} className={`${colName} boardColumn`}>
                 <h1>{colName}</h1>
                 <AddCard user={user} forceUpdate={forceUpdate} colName={colName} colColor={colColor} />
-                <h3>Add / Drop a Card</h3>
-                {isOver && <div>Drop Here!</div>}
+                {isOver && <h3>Drop Here!</h3>}
             </div>
             )
         }
