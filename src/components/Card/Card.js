@@ -31,7 +31,7 @@ export default function Card({ card, colColor, forceUpdate }) {
 
     const showTrash = () => {
         if (showDel) {
-            return (<img src="/trash3.svg" className="deleteCard" onClick={handleDelete} alt="Delete card" />)
+            return (<button className="btn deleteToggler" onClick={handleDelete}>Confirm Delete.</button>)
         }
     }
 
@@ -54,7 +54,7 @@ if (displaying) {
                 <div className="card-contents">
                 <h6 className="card-subtitle mb-2 text-muted">{ card.time }</h6>
                 <p className="card-text">{ card.text }</p>
-                <button className="btn deleteToggler" onClick={() => setShowDel(!showDel)}>Delete?</button>
+                <img src="/trash3.svg" className="deleteCard" onClick={() => setShowDel(!showDel)} alt="Delete card" />
                 </div>
                 {showTrash()}
             </div>

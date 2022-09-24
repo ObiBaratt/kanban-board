@@ -15,7 +15,7 @@ Live at: https://www.kanbaneer.com/
 - **Google Cloud**: I've used PostgreSQL with Flask and Express backends in the past, but really wanted to explore Google Cloud functionality to help solidify what I learned working with it at my internship.
 
 ## from \_\_future\_\_ import *good_ideas*:
-- Have the Edit Card functionality pre-fill edit fields with current values. Nice QoL update.
+- ~~Have the Edit Card functionality pre-fill edit fields with current values. Nice QoL update.~~ Current: Edits persist until refresh. I think this is better than edits resetting when the edit interface is toggled again.
 - Utilize state management (Redux / Thunk). This would make handling auth state a lot easier. Should be an enjoyable Friday night refactoring...?
 - Setup CI/CD. I didn't implement this before due to doing everything locally. Now that its deployed this is a priority.
 - Add testing: This is connected to the above, but having baseline tests to make sure a new change doesn't break anything would be a huge improvement.
