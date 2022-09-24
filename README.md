@@ -1,8 +1,6 @@
 # React Kanban Board
 Live at: https://www.kanbaneer.com/
 
-[Alternate Link](https://alert-basis-361623.web.app/)
-
 ## How I Worked
 - Utilized branches and PRs to cleanly make progress on [different tasks](https://github.com/ObiBaratt/kanban-board/pull/4) or to [fix bugs](https://github.com/ObiBaratt/kanban-board/pull/6) that I couldn't allocate time to when they were discovered.
 - Imported handy modules, but spent time figuring out how things worked behind the scenes in micro side projects. A notable example was figuring out the HTML Drag and Drop API before using React-DnD in the main project.
