@@ -1,3 +1,14 @@
 .centered {
     text-align: center;
 }
+
+.body {
+    background-color: var(--white);
+}
+
+:root {
+    --dark-blue: #0078AA;
+    --light-blue: #3AB4F2;
+    --yellow: #F2DF3A;
+    --white: #f6f6f6;
+}
