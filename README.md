@@ -1,6 +1,8 @@
 # React Kanban Board
 Live at: https://www.kanbaneer.com/
 
+<img src="https://drive.google.com/uc?id=1M6SM6K8RH9MZUVLST22RQU7HHie41xwl" alt="Google Drive Image" />
+
 ## How I Worked
 - Utilized branches and PRs to cleanly make progress on [different tasks](https://github.com/ObiBaratt/kanban-board/pull/4) or to [fix bugs](https://github.com/ObiBaratt/kanban-board/pull/6) that I couldn't allocate time to when they were discovered.
 - Imported handy modules, but spent time figuring out how things worked behind the scenes in micro side projects. A notable example was figuring out the HTML Drag and Drop API before using React-DnD in the main project.
@@ -19,3 +21,4 @@ Live at: https://www.kanbaneer.com/
 - Add testing: This is connected to the above, but having baseline tests to make sure a new change doesn't break anything would be a huge improvement.
 - Minimalistic mobile version: A full Kanban Board isn't useful, but a clean "zen" mode where it just has your Work-In-Progress cards displayed (potentially with an option to add a WIP if there isn't one via dropdown) could be useful if the board is being utilized for a non-tech project (or as the open window in your phone so when you get distracted and pick it up to waste time you get sent back to work).
 - General cleanup. I was so happy to be able to deploy this that I left some legacy code, unused functions, and commented out code that could do with some tidying.
+- Project toggle to allow different boards to load depending on which project is active.
