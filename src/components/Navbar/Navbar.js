@@ -1,15 +1,10 @@
-// import { useNavigate } from "react-router-dom"
-import { auth } from "../../utils/firebaseConfig";
+import { useNavigate } from "react-router-dom"
 
 export default function Navbar() {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const profileClickHandler = () => {
-        if (auth.currentUser){
-            console.log("Hi");
-        } else {
-            console.log("Hello");
-        }
+            navigate("/login");
     }
 
     return (

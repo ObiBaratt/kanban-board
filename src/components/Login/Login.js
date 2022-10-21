@@ -20,7 +20,7 @@ export default function Login({ user, setUser }) {
     const handleGoogleLogin = async () => {
         const success = await loginWithGoogle();
         setUser(success.user.uid);
-        navigate("/home");
+        navigate("/board");
     }
 
 

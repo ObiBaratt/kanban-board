@@ -7,7 +7,7 @@ import fetchCards from "../../utils/fetchCards";
 import sortCards from "../../utils/sortCards";
 import { useNavigate } from "react-router-dom";
 
-export default function Board({ user }) {
+export default function Board({ user, demo }) {
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -15,8 +15,6 @@ export default function Board({ user }) {
         navigate("/");
     }
     }, [user, navigate])
-
-
 
     function useForceUpdate(){
         return () => setValue(value => value + 1); // update state to force render
@@ -45,16 +43,16 @@ export default function Board({ user }) {
         <div className="container mainBoard">
             <div className="row">
                 <div className="col-sm">
-                    <Column user={user} cards={cards} forceUpdate={forceUpdate} colName='Backlog' colColor='' colItems={backlog} />
+                    <Column user={user} cards={cards} demo={demo} forceUpdate={forceUpdate} colName='Backlog' colColor='' colItems={backlog} />
                 </div>
                 <div className="col-sm">
-                    <Column user={user} cards={cards} forceUpdate={forceUpdate} colName='Priority' colColor='warning' colItems={priority} />
+                    <Column user={user} cards={cards} demo={demo} forceUpdate={forceUpdate} colName='Priority' colColor='warning' colItems={priority} />
                 </div>
                 <div className="col-sm">
-                    <Column user={user} cards={cards} forceUpdate={forceUpdate} colName='In Progress' colColor='info' colItems={in_progress} />
+                    <Column user={user} cards={cards} demo={demo} forceUpdate={forceUpdate} colName='In Progress' colColor='info' colItems={in_progress} />
                 </div>
                 <div className="col-sm">
-                    <Column user={user} cards={cards} forceUpdate={forceUpdate} colName='Complete' colColor='' colItems={complete} />
+                    <Column user={user} cards={cards} demo={demo} forceUpdate={forceUpdate} colName='Complete' colColor='' colItems={complete} />
                 </div>
             </div>
         </div>
