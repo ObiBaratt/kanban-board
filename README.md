@@ -1,7 +1,8 @@
 # React Kanban Board
 Live at: https://www.kanbaneer.com/
 
-[Alternate Link](https://alert-basis-361623.web.app/)
+
+![Project in use](./public/mc-kanban-progress.jpg)
 
 ## How I Worked
 - Utilized branches and PRs to cleanly make progress on [different tasks](https://github.com/ObiBaratt/kanban-board/pull/4) or to [fix bugs](https://github.com/ObiBaratt/kanban-board/pull/6) that I couldn't allocate time to when they were discovered.

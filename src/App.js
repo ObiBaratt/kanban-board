@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import Login from "./components/Login/Login";
+import Kanban from "./components/Kanban/Kanban";
 import Home from "./components/Home/Home";
 
 import "./App.css";
@@ -11,8 +12,9 @@ function App() {
 
   return (
         <Routes>
-          <Route path="/home" element={<Home user={user} setUser={setUser} />} />
-          <Route path="/" element={<Login user={user} setUser={setUser} />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/board" element={<Kanban user={user} setUser={setUser} demo={false} />} />
+          <Route path="/login" element={<Login user={user} setUser={setUser} />} />
         </Routes>
       );
 }

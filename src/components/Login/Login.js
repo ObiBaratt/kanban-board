@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { registerWithEmail, loginWithEmail, loginWithGoogle } from "./loginHandler";
+import { useEffect } from "react";
+import { loginWithGoogle } from "./loginHandler";
 
 import "./Login.css";
 
@@ -7,9 +7,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 
 export default function Login({ user, setUser }) {
-    const [register, showRegister] = useState(false);
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -18,33 +16,15 @@ export default function Login({ user, setUser }) {
         }
     });
 
-    const clearState = () => {
-        setEmail("");
-        setPassword("");
-    }
 
     const handleGoogleLogin = async () => {
         const success = await loginWithGoogle();
         setUser(success.user.uid);
-        navigate("/home");
+        navigate("/board");
     }
 
-    const handleEmailLogin = (e) => {
-        e.preventDefault();
 
-        loginWithEmail(email, password)
 
-        clearState();
-    }
-
-    const handleEmailRegister = async (e) => {
-        e.preventDefault();
-
-        registerWithEmail(email, password).then(
-            loginWithEmail(email, password)
-        );
-        clearState();
-    }
 
     if (!register) {
         return (
@@ -52,6 +32,7 @@ export default function Login({ user, setUser }) {
             <Navbar />
             <div className="login-box container">
                 <div className="login">
+
                     <h1 className="login-header">Login</h1>
                     <div className="spacer"> </div>
                     <h3>Email Login</h3>
@@ -73,9 +54,7 @@ export default function Login({ user, setUser }) {
             </div>
             </>
         )
-    }
-
-    else {
+    } else {
         return (
             <>
                 <Navbar />
