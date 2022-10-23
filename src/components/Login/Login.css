@@ -1,3 +1,7 @@
+.login-header {
+    padding-bottom: 5px;
+}
+
 .login {
     text-align: center;
     padding-top: 2em;
@@ -5,12 +9,29 @@
 }
 
 .login-box {
-    border: 2px solid black;
+    border: 3px solid rgb(83, 84, 84);
     width: auto;
     height: auto;
     max-width: 25em;
     max-height: 30em;
-    margin-top: 7em;
+    margin-top: 5em;
+    border-radius: 5px;
+}
+
+.login-btn {
+    width: auto;
+    height: auto;
+    background-color: var(--light-blue);
+    color: var(--white);
+    border: thin solid white;
+    border-radius: 3px;
+    padding: 2px;
+}
+
+.google-logo {
+    background-color: var(--white);
+    padding: 2px;
+    border-radius: 3px;
 }
 
 .spacer {
@@ -25,8 +46,18 @@
 .toggle-register {
     text-align: center;
     color: blue;
+    padding-bottom: 1em;
 }
 
 .toggle-register:hover {
     text-decoration: underline;
+}
+
+.submit-btn {
+    border-radius: 3px;
+    background-color: var(--white);
+}
+
+.submit-btn:hover {
+    color: var(--light-blue);
 }

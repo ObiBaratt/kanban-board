@@ -58,7 +58,6 @@ export const sendPasswordReset = async (email) => {
 export async function loginWithGoogle() {
     const provider = new GoogleAuthProvider();
     try {
-      await setPersistence(auth, browserLocalPersistence);
       const userCred = await signInWithPopup(auth, provider);
 
       return {
