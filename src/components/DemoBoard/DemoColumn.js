@@ -22,6 +22,15 @@ export default function Column({ colName, colColor, cards, forceUpdate }) {
         })
     })
 
+    // TESTING EDITING, DELETING, BUT ADDING DOES NOT WORK...
+    // if (cards[0].type === "Priority") {
+        // cards[0].title = "TEST";
+        // cards.pop();
+        // cards.push({"time":"10/19/2022 @ 2:03:56 PM","user":"Demo User","title":"Make time to look at an interesting candidate","id":"c1","text":"Pick one of their projects to investigate to see if they can make interactive webapps.","type":"Complete"});
+    // }
+
+    console.log(cards)
+
     const colItems = sortCards(colName, cards);
 
     if (colItems && colItems.length > 0) {
