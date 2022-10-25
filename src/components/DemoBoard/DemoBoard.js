@@ -1,58 +1,34 @@
-import "./Board.css";
+import "../Board/Board.css";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-import Column from "../Column/Column";
-import fetchCards from "../../utils/fetchCards";
-import sortCards from "../../utils/sortCards";
-import { useNavigate } from "react-router-dom";
+import { priority, backlog, in_progress, complete } from "../../utils/DemoCards";
 
-export default function Board({ user, demo }) {
-    const navigate = useNavigate();
+import DemoColumn from "./DemoColumn";
 
-    useEffect(() => {
-        if (!user) {
-        navigate("/");
-    }
-    }, [user, navigate])
-
+export default function DemoBoard() {
     function useForceUpdate(){
         return () => setValue(value => value + 1); // update state to force render
     }
-
+    //
     const [value, setValue] = useState(0); // integer state
-    const [cards, setCards] = useState('');
     const forceUpdate = useForceUpdate();
-
-    useEffect(()=> {
-        if (user) {
-            try {
-                fetchCards(user).then(success => {
-                    setCards(success);
-
-                })
-            } catch(e) {console.log(e)}};
-    }, [value, user])
-
-    const priority = sortCards('Priority', cards);
-    const backlog = sortCards('Backlog', cards);
-    const in_progress = sortCards('In Progress', cards);
-    const complete = sortCards('Complete', cards);
+    console.log(value);
 
     return (
         <div className="container mainBoard">
             <div className="row">
                 <div className="col-sm">
-                    <Column user={user} cards={cards} demo={demo} forceUpdate={forceUpdate} colName='Backlog' colColor='' colItems={backlog} />
+                    <DemoColumn cards={backlog} forceUpdate={forceUpdate} colName='Backlog' colColor='' colItems={backlog} />
                 </div>
                 <div className="col-sm">
-                    <Column user={user} cards={cards} demo={demo} forceUpdate={forceUpdate} colName='Priority' colColor='warning' colItems={priority} />
+                    <DemoColumn cards={priority} forceUpdate={forceUpdate} colName='Priority' colColor='warning' colItems={priority} />
                 </div>
                 <div className="col-sm">
-                    <Column user={user} cards={cards} demo={demo} forceUpdate={forceUpdate} colName='In Progress' colColor='info' colItems={in_progress} />
+                    <DemoColumn cards={in_progress} forceUpdate={forceUpdate} colName='In Progress' colColor='info' colItems={in_progress} />
                 </div>
                 <div className="col-sm">
-                    <Column user={user} cards={cards} demo={demo} forceUpdate={forceUpdate} colName='Complete' colColor='' colItems={complete} />
+                    <DemoColumn cards={complete} forceUpdate={forceUpdate} colName='Complete' colColor='' colItems={complete} />
                 </div>
             </div>
         </div>

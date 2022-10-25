@@ -3,12 +3,12 @@ import { useDrop } from "react-dnd";
 import sortCards from "../../utils/sortCards";
 import moveCard from "../../utils/moveCard";
 
-import "./Column.css";
+import "../Column/Column.css";
 
 import Card from "../Card/Card";
 import AddCard from "../AddCard/AddCard";
 
-export default function Column({ colName, colColor, cards, forceUpdate, user }) {
+export default function Column({ colName, colColor, cards, forceUpdate }) {
 
     const [{ isOver }, dropRef] = useDrop({
         accept: "Card",
@@ -29,7 +29,7 @@ export default function Column({ colName, colColor, cards, forceUpdate, user }) 
             <div ref={dropRef} className={`${colName} boardColumn`}>
                 <h1>{colName}</h1>
                 <span className="addCard">
-                    <AddCard user={user} forceUpdate={forceUpdate} colName={colName} colColor={colColor} />
+                    <AddCard forceUpdate={forceUpdate} colName={colName} colColor={colColor} />
                 </span>
                 {isOver && <div>Drop Here!</div>}
                 {colItems.map(item => {
@@ -47,7 +47,7 @@ export default function Column({ colName, colColor, cards, forceUpdate, user }) 
             return (
                 <div ref={dropRef} className={`${colName} boardColumn`}>
                 <h1>{colName}</h1>
-                <AddCard user={user} forceUpdate={forceUpdate} colName={colName} colColor={colColor} />
+                <AddCard forceUpdate={forceUpdate} colName={colName} colColor={colColor} />
                 {isOver && <h3>Drop Here!</h3>}
             </div>
             )
