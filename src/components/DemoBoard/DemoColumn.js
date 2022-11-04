@@ -2,7 +2,7 @@ import { useDrop } from "react-dnd";
 
 import "../Column/Column.css";
 
-import Card from "../Card/Card";
+import DemoCard from "./DemoCard";
 import AddCard from "../AddCard/AddCard";
 
 export default function Column({ colName, colColor, cards, forceUpdate, setCards }) {
@@ -19,19 +19,8 @@ export default function Column({ colName, colColor, cards, forceUpdate, setCards
     });
 
     const handleMove = (item) => {
-        console.log("item: ", item);
-        console.log("item type: ", item.type);
-        console.log("colName: ", colName);
-
-
-        // let index = cards[item.type].indexOf(item);
-        // cards[item.type].splice(index);
         item.type = colName;
 
-        console.log("item after: ", item);
-        console.log("item type after: ", item.type);
-
-        // cards[colName].push(item)
         setCards(cards);
     }
 
@@ -53,7 +42,7 @@ export default function Column({ colName, colColor, cards, forceUpdate, setCards
                     // if (item.type === colName) {
                         return (
                             <div key={`${item.id}`}>
-                                <Card card={item}
+                                <DemoCard card={item}
                                       colColor={colColor}
                                       forceUpdate={forceUpdate} />
                             </div>

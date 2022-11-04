@@ -3,11 +3,9 @@ import { useState } from "react";
 import { useDrag } from "react-dnd";
 import { DragTypes } from "../../utils/DnDConstants";
 
-import EditCard from "../EditCard/EditCard";
+import EditCard from "./DemoEdit";
 
-import deleteCard from "../../utils/deleteCard";
-
-import "./Card.css";
+import "../Card/Card.css";
 
 export default function Card({ card, colColor, forceUpdate }) {
     const [{isDragging}, dragRef] = useDrag(() => ({
@@ -24,9 +22,6 @@ export default function Card({ card, colColor, forceUpdate }) {
 
     const handleDelete = () => {
         setDisplaying(false);
-        deleteCard(card.id).then(
-            forceUpdate()
-        );
     }
 
     const showTrash = () => {
