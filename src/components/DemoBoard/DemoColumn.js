@@ -19,21 +19,27 @@ export default function Column({ colName, colColor, cards, forceUpdate, setCards
     });
 
     const handleMove = (item) => {
-        const index = cards[item.type].indexOf(item);
-        console.log(index);
-        cards[item.type].splice(index);
-        cards[colName].unshift(item);
+        console.log("item: ", item);
+        console.log("item type: ", item.type);
+        console.log("colName: ", colName);
+
+
+        // let index = cards[item.type].indexOf(item);
+        // cards[item.type].splice(index);
+        item.type = colName;
+
+        console.log("item after: ", item);
+        console.log("item type after: ", item.type);
+
+        // cards[colName].push(item)
         setCards(cards);
-        console.log("cards after", cards)
     }
 
-    // TESTING EDITING, DELETING, BUT ADDING DOES NOT WORK...
-    // if (cards[0].type === "Priority") {
-        // cards[0].title = "TEST";
-        // cards.pop();
-        // cards.push({"time":"10/19/2022 @ 2:03:56 PM","user":"Demo User","title":"Make time to look at an interesting candidate","id":"c1","text":"Pick one of their projects to investigate to see if they can make interactive webapps.","type":"Complete"});
-    // }
-    const colItems = cards[colName];
+    let colItems = cards.filter((card) => {
+        return card.type === colName;
+    });
+
+    console.log(colName, colItems);
 
     if (colItems && colItems.length > 0) {
         return (
@@ -44,13 +50,15 @@ export default function Column({ colName, colColor, cards, forceUpdate, setCards
                 </span>
                 {isOver && <div>Drop Here!</div>}
                 {colItems.map(item => {
-                    return (
+                    // if (item.type === colName) {
+                        return (
                             <div key={`${item.id}`}>
                                 <Card card={item}
                                       colColor={colColor}
                                       forceUpdate={forceUpdate} />
                             </div>
-                    );
+                        );
+                    // }
                 })}
             </div>
         )}

@@ -2,17 +2,18 @@ import "../Board/Board.css";
 
 import { useState } from "react";
 
-import { priority, backlog, in_progress, complete } from "../../utils/DemoCards";
+import { priority, backlog, in_progress, complete, demoCardSet } from "../../utils/DemoCards";
 
 import DemoColumn from "./DemoColumn";
 
 export default function DemoBoard() {
-    const [cards, setCards] = useState({
-        "Priority": priority,
-        "Backlog": backlog,
-        "In Progress": in_progress,
-        "Complete": complete
-    });
+    // const [cards, setCards] = useState({
+    //     "Priority": priority,
+    //     "Backlog": backlog,
+    //     "In Progress": in_progress,
+    //     "Complete": complete
+    // });
+    const [cards, setCards] = useState(demoCardSet);
 
     function useForceUpdate(){
         return () => setValue(value => value + 1); // update state to force render
