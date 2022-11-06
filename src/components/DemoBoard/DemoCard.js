@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDrag } from "react-dnd";
 import { DragTypes } from "../../utils/DnDConstants";
 
-import EditCard from "./DemoEdit";
+import DemoEditCard from "./DemoEditCard";
 
 import "../Card/Card.css";
 
@@ -42,7 +42,7 @@ if (displaying) {
             <div className="card-body" id={`${card.id}`}>
                 <span className="card-head">
                     <span className="card-head-item">
-                        <EditCard card={card} forceUpdate={forceUpdate} colColor={colColor}/>
+                        <DemoEditCard card={card} forceUpdate={forceUpdate} colColor={colColor}/>
                     </span>
                     </span>
                     <h5 className={`card-head-item bg-${colColor}`}>{ card.title }</h5>

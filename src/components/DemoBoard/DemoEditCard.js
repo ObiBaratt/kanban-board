@@ -1,29 +1,23 @@
 import { useState } from "react";
 
-import editCard from "../../utils/editCard";
-
-export default function EditCard({ card, forceUpdate, colColor }) {
+export default function DemoEditCard({ card, forceUpdate, colColor }) {
     const [displayForm, setDisplayForm] = useState(false);
     const [title, setTitle] = useState(card.title);
     const [text, setText] = useState(card.text);
 
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
         console.log('Edited: ', 'title: ', title, 'text: ', text);
 
-        const cardEdits = {
-            "title": title,
-            "text": text,
-        }
+        setTitle(title);
+        setText(text);
+        card.title = title;
+        card.text = text;
 
-        // setTitle('');
-        // setText('');
         setDisplayForm(false);
 
-        // eslint-disable-next-line
-        const edited = await editCard(card, cardEdits);
         forceUpdate();
     }
 
