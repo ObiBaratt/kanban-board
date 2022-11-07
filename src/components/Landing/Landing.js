@@ -1,17 +1,18 @@
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
+import { auth } from "../../utils/firebaseConfig";
 
 import DemoBoard from "../DemoBoard/DemoBoard";
 import Navbar from "../Navbar/Navbar";
+import { logout } from "../Login/loginHandler";
 
 export default function Home() {
 
+  if (auth.currentUser) {
+    logout();
+  }
     return (
         <>
           <Navbar />
-          <DndProvider backend={HTML5Backend}>
-              <DemoBoard />
-          </DndProvider>
-          </>
+          <DemoBoard />
+        </>
     )
 }

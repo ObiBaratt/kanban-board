@@ -1,16 +1,11 @@
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
-
 import Board from "../Board/Board";
 import Navbar from "../Navbar/Navbar";
 
-export default function Kanban({ user, setUser }) {
+export default function Kanban({ user, setUser}) {
     return (
         <>
           <Navbar user={user} setUser={setUser} />
-          <DndProvider backend={HTML5Backend}>
-              <Board user={user} setUser={setUser} />
-          </DndProvider>
+          <Board user={user} setUser={setUser} />
         </>
       );
 }
