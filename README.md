@@ -1,5 +1,5 @@
 # React Kanban Board
-Live at: https://www.kanbaneer.com/
+Live at: https://kanban-ob.netlify.app/
 
 
 ![Project in use](./public/mc-kanban-progress.jpg)
