@@ -12,7 +12,7 @@ export default function Login({ user, setUser }) {
 
     useEffect(() => {
         if (user) {
-            navigate("/home");
+            navigate("/board");
         }
     });
 
