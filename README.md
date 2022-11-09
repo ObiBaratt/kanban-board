@@ -16,7 +16,7 @@ Live at: https://kanban-ob.netlify.app/
 - **Google Cloud**: I've used PostgreSQL with Flask and Express backends in the past, but really wanted to explore Google Cloud functionality to help solidify what I learned working with it at my internship.
 
 ## Design Upgrade!
-![Upgrading the Design](./public/input.png)
+![Design upgrade in progress](https://github.com/ObiBaratt/kanban-board/blob/main/public/Input.png)
 
 ## from \_\_future\_\_ import *good_ideas*:
 - Create a landing page with fully functional demo board (this part is done), ironing out finaly issues and decided on landing page design.
