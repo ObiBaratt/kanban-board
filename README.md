@@ -1,5 +1,5 @@
 # React Kanban Board
-Live at: https://www.kanbaneer.com/
+Live at: https://kanban-ob.netlify.app/
 
 
 ![Project in use](./public/mc-kanban-progress.jpg)
@@ -16,7 +16,7 @@ Live at: https://www.kanbaneer.com/
 - **Google Cloud**: I've used PostgreSQL with Flask and Express backends in the past, but really wanted to explore Google Cloud functionality to help solidify what I learned working with it at my internship.
 
 ## Design Upgrade!
-<img src="https://lh3.googleusercontent.com/4zGvMDpqUV3DU1Gab7_AkEXBr_ZeYpnYzKvPoQPIEp6EQoEV4Mx72xdqhhbXdgT3Dou3HDcryqgNp-yZO5G9aZsGMrqe2blTqcKH8OYUfXpcNS67o3HLHvr6tOUCzCfEOhyPFd5XIrMPf-6jFZFVNPwRhhiiX3oIFWuzz9_L0Oe0Se5bNKSo9woEGbJc1U8pvKv0TWgBIrasrq8GaZiIoHmRiSwdC0gtYVYc_0EKbTJQZ3u4nxvmmp5WETJQkBUdjovB1OFaz77WH6ZmyCv4ZSLELVrpr3qYVafrzJJ4y5QmRwCY8gavjlLsCrVtbnYg2ptaaEgeorEKLpeoIhOOiJiTH-LuZ7yF6P3d_RhYUbWVBzBnlWWB3sRjTzmUsERnlT_r4qXH22pgIXwT8JeO8GNZPP8FU252guNur8i6yNWcM9_ICteHc600qIncBj6TUURpOdyWiROGmb__9x8qAakHaWsk8PBldDu0WUZRk4o1cbmt7XrB_vkXplBYyAPXLHWVUR2BWvR2-PNlM0tHLFj0bDLfY5QAK6st3QJ70xqT3aYId2u6tz2zV6gGnahji_0AfY_1eqnWMivkPIRrssSLlsuGess1nTIf2mLhQ2qEnFpQ0qHM9iN5hP9JFGm_L5p3ZWOZwVhM5d0Ehm3oChUOyj3p6sB1aMrV7bybj_CweDNfK0hW4nP2P8ySUcUYsZ0M1zzaJ3sPGhMe_VcRI0kGBFRz9IN_djdMMxI_iTMMj8LeOk3Rbvkw6a0PrSz-4kj_zh8rdNO5LzDNm2MXz87TOisEBADneRzVkX4joKiByNYKsdmWwdOlux8uCHGt36GwNNcW31Aet5h2istetkTI9lgTGNvdDCwdxOvZAwUNKwFjaOSOk9ItcPzHiQShn9ZbMXJxuhrwL3w7DlcZrqx63z-hanXOXBQybRgP6QyKm4DJrbis-2uMmiuUs3slaynn_xNZPzb2IZPjlh-1xJlSmG3cERtK1HEQF-WBe6Grt3rsYNWjOFg=w1307-h924-no?authuser=2">
+![Design upgrade in progress](https://github.com/ObiBaratt/kanban-board/blob/main/public/Input.png)
 
 ## from \_\_future\_\_ import *good_ideas*:
 - Create a landing page with fully functional demo board (this part is done), ironing out finaly issues and decided on landing page design.
