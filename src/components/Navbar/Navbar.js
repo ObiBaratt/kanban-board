@@ -7,7 +7,7 @@ export default function Navbar() {
 
     const profileClickHandler = () => {
         if (auth.currentUser) {
-            logout()
+            logout();
             navigate("/");
         } else {
             navigate("/login");
